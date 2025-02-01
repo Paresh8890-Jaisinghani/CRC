@@ -1,18 +1,15 @@
-import { Link } from 'react-router-dom';
-import './App.css';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Participants from "./Participants";
+import HealthForm from "./health.js";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Clinical Research Coordinator</h1>
-        
-        <Link to="/participants">
-          <button className='btn'>Existing Participants</button>
-        </Link>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<Participants />} />
+      <Route path="/health_data/:participantId" element={<HealthForm />} />
+    </Routes>
   );
-}
+};
 
 export default App;

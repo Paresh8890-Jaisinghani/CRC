@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom"; // Import Link for navigation
 import './participants.css';
 
 const Participants = () => {
@@ -67,6 +68,10 @@ const Participants = () => {
             <p><strong>Alcohol Use:</strong> {participant.healthAndLifestyle.alcoholUse}</p>
             <p><strong>Drug Use:</strong> {participant.healthAndLifestyle.drugUse}</p>
             <p><strong>Physical Activity Level:</strong> {participant.healthAndLifestyle.physicalActivityLevel}</p>
+            
+            <Link to={`/health_data/${participant._id}`}>
+              <button>Health Form</button>
+            </Link>
           </div>
         ))}
       </div>
